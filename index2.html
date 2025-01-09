@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jermaine's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #ff0000; /* Starting red color */
+            background-image: linear-gradient(45deg, #ff0000, #ffffff); /* Red to white gradient */
+            margin: 0;
+            color: white;
+            overflow: hidden;
+            font-family: "Kanit", sans-serif;
+        }
+
+        h1 {
+            font-family: "Kanit";
+            font-weight: 400;
+            font-style: normal;
+            font-size: 50px;
+            color: white;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .img-circle {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .lead {
+            font-size: 18px;
+            color: black; /* Changed the paragraph text color to black */
+            text-align: center;
+        }
+
+        .btn-custom {
+            font-size: 16px;
+            padding: 12px 30px;
+        }
+
+        .btn-custom:hover {
+            background-color: #1abc9c;
+            border-color: #1abc9c;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        audio {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .img-circle {
+                width: 200px;
+                height: 200px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .lead {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Audio -->
+    <audio id="background-audio" loop>
+        <source src="./Exotix & luvdesenthusiast - Ton1ght (INSTRUMENTAL).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Content Container -->
+    <div class="content-container text-center px-4 py-5 my-5">
+        <img class="d-block mx-auto mb-4 img-circle" src="./image0.jpeg" alt="Jermaine's Portfolio Image">
+        <h1 class="display-5 fw-bold text-body-emphasis">Jermaine's Portfolio</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">
+                As a beginner-level coder, I am in the early stages of learning programming and web development. I am still familiarizing myself with the basics of coding, such as understanding syntax, structure, and how to write simple code to build websites and applications...
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                 <a href="https://github.com/jerminnacut/kinky" target="_blank" class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-custom px-4 gap-3">CODE</button>
+                </a>
+                <a href="https://www.instagram.com/_.maine7x?igsh=ODlwYzNscHhtc2c3" class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-outline-secondary btn-custom px-4">SOCIAL</button>
+                </a>
+            </div>
+
+            <!-- Play/Pause Button for Audio -->
+            <button id="audio-toggle" onclick="toggleAudio()" class="btn btn-success mt-4 px-5">Play Background Music</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        function toggleAudio() {
+            const audio = document.getElementById('background-audio');
+            const toggleButton = document.getElementById('audio-toggle');
+
+            if (audio.paused) {
+                audio.play();
+                toggleButton.textContent = 'Pause Background Music';
+            } else {
+                audio.pause();
+                toggleButton.textContent = 'Play Background Music';
+            }
+        }
+    </script>
+
+</body>
+</html>
